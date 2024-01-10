@@ -5,8 +5,6 @@
              Title="Account Page">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            
     </VerticalStackLayout>
 </ContentPage>
