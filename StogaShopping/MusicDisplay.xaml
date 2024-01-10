@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.AccountPage"
+             Title="MusicDiplay">
+    <StackLayout>
+        <Label 
+
+        <!-- Music Image -->
+        <Image Source="{Binding Music.Image}" HeightRequest="200" Aspect="AspectFit" />
+
+        <!-- Artist Info -->
+        <Label Text="{Binding Music.Artist}" FontSize="20" FontAttributes="Bold" Margin="0,10,0,5" />
+
+        <!-- Song Info -->
+        <Label Text="{Binding Music.Song}" FontSize="16" Margin="0,0,0,10" />
+
+        <!-- Music Controls -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Pause" Clicked="PauseButton_Clicked" />
+            <Button Text="Play" Clicked="PlayButton_Clicked" />
+            <Button Text="Loop" Clicked="LoopButton_Clicked" />
+            <Button Text="Like" Clicked="LikeButton_Clicked" />
+        </StackLayout>
+
+        <!-- Song Progress Slider -->
+        <Slider x:Name="songProgressSlider" Maximum="{Binding Music.Duration}" Value="{Binding Music.CurrentPosition}" Margin="0,20,0,0" />  
+    </StackLayout>
+</ContentPage>
