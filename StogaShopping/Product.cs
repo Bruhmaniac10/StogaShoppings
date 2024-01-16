@@ -26,4 +26,16 @@ namespace StogaShopping
         public bool Availability { get; set; }
 
     }
+    private void FilterButton_Clicked(object sender, EventArgs e)
+		{
+    // Retrieve user inputs from entry fields
+    int minPrice = int.TryParse(minPriceEntry.Text, out int minPriceResult) ? minPriceResult : 0;
+    int maxPrice = int.TryParse(maxPriceEntry.Text, out int maxPriceResult) ? maxPriceResult : int.MaxValue;
+    string seller = sellerEntry.Text;
+    string descriptionKeywords = descriptionEntry.Text;
+    string features = featuresEntry.Text;
+
+    // Apply filters to the view model
+    ((ProductsViewModel)BindingContext).ApplyFilters(minPrice, maxPrice, seller, descriptionKeywords, features);
+}
 }

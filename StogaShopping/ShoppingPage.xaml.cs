@@ -21,18 +21,6 @@ namespace StogaShopping
             Random rand = new Random();
             Products = new ObservableCollection<Product>(Products.OrderBy(p => rand.Next()));
         }
-		private void FilterButton_Clicked(object sender, EventArgs e)
-		{
-    // Retrieve user inputs from entry fields
-    int minPrice = int.TryParse(minPriceEntry.Text, out int minPriceResult) ? minPriceResult : 0;
-    int maxPrice = int.TryParse(maxPriceEntry.Text, out int maxPriceResult) ? maxPriceResult : int.MaxValue;
-    string seller = sellerEntry.Text;
-    string descriptionKeywords = descriptionEntry.Text;
-    string features = featuresEntry.Text;
-
-    // Apply filters to the view model
-    ((ProductsViewModel)BindingContext).ApplyFilters(minPrice, maxPrice, seller, descriptionKeywords, features);
-}
 public void ApplyFilters(int minPrice, int maxPrice, string seller, string descriptionKeywords, string features)
 {
     var filteredProducts = originalProducts

@@ -3,31 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StogaShopping.ShoppingPage"
              Title="ShoppingPage">
-    <ContentPage.BindingContext>
-        <local:ProductsViewModel />
-    </ContentPage.BindingContext>
-
-    <StackLayout>
-        <!-- Filter Entry Fields -->
-        <Entry x:Name="minPriceEntry" Placeholder="Min Price" Completed="FilterButton_Clicked" />
-        <Entry x:Name="maxPriceEntry" Placeholder="Max Price" Completed="FilterButton_Clicked" />
-        <Entry x:Name="sellerEntry" Placeholder="Seller" Completed="FilterButton_Clicked" />
-        <Entry x:Name="descriptionEntry" Placeholder="Description Keywords" Completed="FilterButton_Clicked" />
-        <Entry x:Name="featuresEntry" Placeholder="Features" Completed="FilterButton_Clicked" />
-
-        <!-- Filter Button -->
-        <Button Text="Filter" Clicked="FilterButton_Clicked" />
-
-        <!-- Product CollectionView -->
-        <CollectionView ItemsSource="{Binding Products}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <!-- Your existing product template here -->
-                    <!-- ... -->
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
-</ContentPage>
-
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
 </ContentPage>
