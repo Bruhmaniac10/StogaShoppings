@@ -1,45 +1,16 @@
 ﻿namespace StogaShopping
 {
-    public partial class LandingPage : ContentPage
+    public partial class LandingPage : TabbedPage
     {
         public LandingPage()
         {
             InitializeComponent();
-        }
-
-        
-        private void BackAndRefreshClicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProfileIconClicked(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ShoppingClicked(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MusicClicked(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void DealsClicked(object sender, EventArgs e)
-        {
-            
-        }
-        private void SellClicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HelpClicked(object sender, EventArgs e)
-        {
-            
+            this.Children.Add(new ShoppingPage());
+            this.Children.Add(new CartPage());
+            this.Children.Add(new Music_Page());
+            this.Children.Add(new DealsPage());
+            this.Children.Add(new SellPage());
+            this.Children.Add(new HelpPage());
         }
     }
 }

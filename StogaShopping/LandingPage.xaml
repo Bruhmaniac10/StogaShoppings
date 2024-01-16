@@ -1,44 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StogaShopping.LandingPage"
-             Title="LandingPage">
-    <Grid RowSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:StogaShopping"
+             x:Class="StogaShopping.LandingPage">
 
+    <local:ShoppingPage Title="Shopping"/>
+    <local:CartPage Title="Cart"/>
+    <local:Music_Page Title="Music"/>
+    <local:SellPage Title="Sell"/>
+    <local:HelpPage Title="Help"/>
 
-        <Grid Grid.Row="0">
-            <ImageButton Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
-                         HeightRequest="50" WidthRequest="50"
-                    Clicked="BackAndRefreshClicked"
-                    HorizontalOptions="Start" />
-
-
-            <Entry Placeholder="Search" HorizontalOptions="CenterAndExpand" />
-
-
-            <ImageButton Source="profile_icon.png"
-                   Clicked="ProfileIconClicked"
-                   HorizontalOptions="End" />
-        </Grid>
-
-
-        <StackLayout Grid.Row="1" Orientation="Horizontal">
-            <Button Text="Shopping" Clicked="ShoppingClicked" />
-            <Button Text="Music" Clicked="MusicClicked" />
-            <Button Text="Deals" Clicked="DealsClicked" />
-            <Button Text="Sell" Clicked="SellClicked" />
-            <Button Text="Help" Clicked="HelpClicked" />
-        </StackLayout>
-
-
-        <StackLayout Grid.Row="2">
-
-        </StackLayout>
-    </Grid>
-</ContentPage>
-
+</TabbedPage>
