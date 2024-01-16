@@ -3,10 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StogaShopping.CartPage"
              Title="CartPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage Title="LandingPage">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0">
+            <ImageButton Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
+                         HeightRequest="50" WidthRequest="50"
+                    Clicked="BackAndRefreshClicked"
+                    HorizontalOptions="Start" />
+
+
+            <Entry Placeholder="Search" HorizontalOptions="CenterAndExpand" />
+
+
+            <ImageButton Source="profile_icon.png"
+                   Clicked="ProfileIconClicked"
+                   HorizontalOptions="End" />
+        </Grid>
+    </Grid>
 </ContentPage>

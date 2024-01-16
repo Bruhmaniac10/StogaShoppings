@@ -42,5 +42,11 @@ namespace StogaShopping
         {
             return await _database.DeleteAsync(product);
         }
+        private void AddToCartButton_Clicked(object sender, EventArgs e)
+{
+    
+    var selectedProduct = ((Button)sender).BindingContext as Product;
+    
+}
     }
 }
