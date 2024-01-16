@@ -34,17 +34,25 @@ namespace StogaShopping
             // Add more UI elements and details as needed
         }
 
-        private void AddSampleProducts()
+       private void AddSampleProductsWithPricesAndBrands()
         {
-            for (int i = 1; i <= 20; i++)
+            var products = new List<Product>
             {
-                var newProduct = new Product
-                {
-                    Name = $"Sample Product {i}",
-                    Price = 10.00 + i // You can adjust the pricing logic as needed
-                };
+                new Product { Name = "Smartphone", Brand = "Samsung", Price = 299.99 },
+                new Product { Name = "Laptop", Brand = "Dell", Price = 799.99 },
+                new Product { Name = "Headphones", Brand = "Sony", Price = 149.99 },
+                new Product { Name = "Desk Chair", Brand = "IKEA", Price = 89.99 },
+                new Product { Name = "Backpack", Brand = "Nike", Price = 39.99 },
+                new Product { Name = "Coffee Maker", Brand = "Keurig", Price = 79.99 },
+                new Product { Name = "Fitness Tracker", Brand = "Fitbit", Price = 129.99 },
+                new Product { Name = "Bluetooth Speaker", Brand = "JBL", Price = 59.99 },
+                new Product { Name = "Wireless Mouse", Brand = "Logitech", Price = 24.99 },
+                new Product { Name = "External Hard Drive", Brand = "Western Digital", Price = 99.99 }
+            };
 
-                _ = productDatabase.SaveProductAsync(newProduct);
+            foreach (var product in products)
+            {
+                _ = productDatabase.SaveProductAsync(product);
             }
         }
     }
