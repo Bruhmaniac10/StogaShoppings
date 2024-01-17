@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StogaShopping.CartPage"
              Title="CartPage">
-    <ContentPage Title="LandingPage">
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -27,4 +26,24 @@
                    HorizontalOptions="End" />
         </Grid>
     </Grid>
+    <ContentPage.BindingContext>
+        <local:CartPage />
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding CartItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="20">
+                        <!-- Product template here -->
+                        <!-- ... -->
+
+                        <!-- Remove from Cart Button -->
+                        <Button Text="Remove from Cart" Clicked="RemoveFromCartButton_Clicked" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
 </ContentPage>

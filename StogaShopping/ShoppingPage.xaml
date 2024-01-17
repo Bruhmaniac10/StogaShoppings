@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StogaShopping.ShoppingPage"
              Title="ShoppingPage">
-    <ContentPage Title="LandingPage">
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

@@ -42,11 +42,12 @@ namespace StogaShopping
         {
             return await _database.DeleteAsync(product);
         }
-        private void AddToCartButton_Clicked(object sender, EventArgs e)
-{
-    
-    var selectedProduct = ((Button)sender).BindingContext as Product;
-    
+        private void AddToCartButton_Clicked(object sender, EventArgs e){
+        // Retrieve the selected product from the button's binding context
+        var selectedProduct = ((Button)sender).BindingContext as Product;
+
+        // Add the product to the cart
+       cartViewModel.AddToCart(selectedProduct);
 }
     }
 }
