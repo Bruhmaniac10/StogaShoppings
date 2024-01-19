@@ -5,13 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StogaShopping
+namespace ShoppingDatabases
 {
     public class ProductDatabase
     {
 
         SQLiteAsyncConnection Database;
 
+        public ProductDatabase()
+        {
+        }
 
         async Task Init()
         {
@@ -28,11 +31,6 @@ namespace StogaShopping
             return await Database.Table<Product>().ToListAsync();
         }
 
-        /*	public async Task<List<User>> GetUsersNotDoneAsync()
-            {
-                await Init();
-                return await Database.Table<User>().Where(t => t.Done).ToListAsync();
-            }*/
 
         public async Task<Product> GetProductAsync(int id)
         {
