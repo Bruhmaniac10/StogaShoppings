@@ -1,6 +1,6 @@
 using SQLite;
 
-namespace ShoppingDatabases;
+namespace StogaShopping;
 
 public class UserDatabase
 {
