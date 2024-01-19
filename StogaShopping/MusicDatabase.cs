@@ -1,4 +1,4 @@
-﻿using Plugin.Maui.Audio;
+using Plugin.Maui.Audio;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -29,16 +29,11 @@ namespace StogaShopping
             return await Database.Table<Music>().ToListAsync();
         }
 
-        /*	public async Task<List<User>> GetUsersNotDoneAsync()
-            {
-                await Init();
-                return await Database.Table<User>().Where(t => t.Done).ToListAsync();
-            }*/
 
-        public async Task<Music> GetMusicAsync(string val)
+        public async Task<Music> GetMusicAsync(int musicID)
         {
             await Init();
-            return await Database.Table<Music>().Where(i => i.musicval == val).FirstOrDefaultAsync();
+            return await Database.Table<Music>().Where(i => i.musicID == musicID).FirstOrDefaultAsync();
         }
 
         public async Task<int> SaveMusicAsync(Music music)
@@ -55,6 +50,8 @@ namespace StogaShopping
             await Init();
             return await Database.DeleteAsync(music);
         }
+        
+
 
     }
 }
