@@ -1,6 +1,6 @@
 using SQLite;
 
-namespace StogaShopping;
+namespace ShoppingDatabases;
 
 public class UserDatabase
 {
@@ -23,12 +23,6 @@ public class UserDatabase
 		return await Database.Table<User>().ToListAsync();
 	}
 
-/*	public async Task<List<User>> GetUsersNotDoneAsync()
-	{
-		await Init();
-		return await Database.Table<User>().Where(t => t.Done).ToListAsync();
-	}*/
-
 	public async Task<User> GetUserAsync(int id)
 	{
 		await Init();
@@ -38,7 +32,7 @@ public class UserDatabase
     public async Task<int> SaveUserAsync(User user)
     {
         await Init();
-        if (user.Id != 0)
+        if (user.UserId != 0)
             return await Database.UpdateAsync(user);
         else  
             return await Database.InsertAsync(user);
