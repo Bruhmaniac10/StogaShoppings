@@ -1,3 +1,4 @@
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +9,13 @@ namespace StogaShopping
 {
     public class User
     {
-
+        [PrimaryKey, AutoIncrement]
         public int UserId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public List<String> PaymentInfo { get; set; }
-        public List<String> Addresses { get; set; }
+        public int PaymentInfo { get; set; }
+        public string Address { get; set; }
         public string ProfilePhoto { get; set; }
 
-
-        public void Done() { }
     }
 }
