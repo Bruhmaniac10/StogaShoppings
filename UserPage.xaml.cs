@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace ShoppingDatabases;
+namespace StogaShopping;
 
 public partial class UserPage : ContentPage
 {
