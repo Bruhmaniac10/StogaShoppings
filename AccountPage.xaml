@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.AccountPage"
+             Title="Account Page">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/backgroundfour.png"
+                       Aspect="AspectFill"
+                       Grid.RowSpan="3"/>
+
+        <Grid Grid.Row="0">
+            <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
+                         HeightRequest="100"
+                         WidthRequest="100"
+                    HorizontalOptions="Start" />
+
+
+            <Entry Placeholder="Search" HorizontalOptions="CenterAndExpand" />
+
+
+        </Grid>
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button Text="Shopping" Clicked="ShoppingClicked" />
+            <Button Text="Music" Clicked="MusicClicked" />
+            <Button Text="Deals" Clicked="DealsClicked" />
+            <Button Text="Cart" Clicked="CartClicked" />
+            <Button Text="Sell" Clicked="SellClicked" />
+            <Button Text="Account" Clicked="AccountClicked" />
+            <Button Text="Help" Clicked="HelpClicked" />
+        </StackLayout>
+         
+       
+        <StackLayout Grid.Row="2">
+        <Label x:Name="createAccountLabel" Text="Create an Account" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+<Label x:Name="IDLabel" Text="Name:" />
+<Entry x:Name="IDEntry" Placeholder="Enter your user ID" />
+
+<Label x:Name="usernameLabel" Text="Username:" />
+<Entry x:Name="usernameEntry" Placeholder="Enter your username" />
+
+<Label x:Name="passwordLabel" Text="Password:" />
+<Entry x:Name="passwordEntry" Placeholder="Enter your password" IsPassword="True" />
+
+<Label x:Name="emailLabel" Text="Email:" />
+<Entry x:Name="emailEntry" Placeholder="Enter your email here" />
+
+<Label x:Name="phoneNumberLabel" Text="Phone Number:" />
+<Entry x:Name="phoneNumberEntry" Placeholder="Enter your Phone Number here" />
+
+<Label x:Name="addressLabel" Text="Home Address:" />
+<Entry x:Name="addressEntry" Placeholder="Enter your home address" />
+
+<Label x:Name="paymentInfoLabel" Text="Payment Information:" />
+<Entry x:Name="paymentInfoEntry" Placeholder="Enter your payment information" />
+
+<Label x:Name="PhotoLabel" Text="Photo Information:" />
+<Entry x:Name="PhotoEntry" Placeholder="Enter your Profile Photo" />
+
+<Button Text="Create Account" Clicked="OnCreateAccountClicked" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+<Button Text="Sign In Instead" Clicked="OnSignInClicked" HorizontalOptions="CenterAndExpand" />
+
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

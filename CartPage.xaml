@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.CartPage"
+             Title="CartPage">
+    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+             Command="{Binding RefreshCommand}">
+    <ScrollView>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/backgroundtwo.png"
+                       Aspect="AspectFill"
+                       Grid.RowSpan="3"/>
+
+        <Grid Grid.Row="0">
+            <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
+                         HeightRequest="100"
+                         WidthRequest="100"
+                    HorizontalOptions="Start" />
+
+
+            <Entry Placeholder="Search" HorizontalOptions="CenterAndExpand" />
+
+
+        </Grid>
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button Text="Shopping" Clicked="ShoppingClicked" />
+            <Button Text="Music" Clicked="MusicClicked" />
+            <Button Text="Deals" Clicked="DealsClicked" />
+            <Button Text="Cart" Clicked="CartClicked" />
+            <Button Text="Sell" Clicked="SellClicked" />
+            <Button Text="Account" Clicked="AccountClicked" />
+            <Button Text="Help" Clicked="HelpClicked" />
+        </StackLayout>
+
+       
+        <StackLayout Padding="10,0" HorizontalOptions="Start">
+           <ListView x:Name="cartListView"
+                ItemsSource="{Binding CartItems}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Price, StringFormat='Price: ${0:N2}'}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        </StackLayout>
+    </Grid>
+   </ScrollView>
+  </RefreshView>
+</ContentPage>

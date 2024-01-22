@@ -1,0 +1,69 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.HelpPage"
+             Title="HelpPage">
+    <ScrollView>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       HorizontalOptions="Start" />
+
+                <Entry Placeholder="Search" HorizontalOptions="CenterAndExpand" />
+            </Grid>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+
+                <Button Text="Shopping" Clicked="ShoppingClicked" />
+                <Button Text="Music" Clicked="MusicClicked" />
+                <Button Text="Deals" Clicked="DealsClicked" />
+                <Button Text="Cart" Clicked="CartClicked" />
+                <Button Text="Sell" Clicked="SellClicked" />
+                <Button Text="Account" Clicked="AccountClicked" />
+                <Button Text="Help" Clicked="HelpClicked" />
+            </StackLayout>
+            <StackLayout Grid.Row="2">
+                 <Label Text="How to Use Shopping" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+                <StackLayout Margin="20">
+                    <Label Text="1. Create an Account in the Accounts Tab" FontSize="Subtitle" />
+                    <Label Text="2. Search for Products in Shopping" FontSize="Subtitle" Margin="0,10,0,0" />
+                    <Label Text="3. Add to Cart using the button next to the product" FontSize="Subtitle" Margin="0,10,0,0" />
+                    <Label Text="4. Proceed to Checkout in your cart" FontSize="Subtitle" Margin="0,10,0,0" />
+                    <Label Text="5. Make sure your Payment is correct" FontSize="Subtitle" Margin="0,10,0,0" />
+                    <Label Text="6. Place your Order" FontSize="Subtitle" Margin="0,10,0,0" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3">
+                <Label Text="How to Use Music" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+                <StackLayout Margin="20">
+                    <Label Text="1. Create an Account in the Accounts Tab" FontSize="Subtitle" />
+                    <Label Text="2. Go to the Music Tab to access your songs and look for new ones" FontSize="Subtitle" Margin="0,10,0,0" />
+                    <Label Text="3. Click on a song to play in the player at the bottom" FontSize="Subtitle" Margin="0,10,0,0" />
+                    <Label Text="4. Use the buttons to play pause and loop your music" FontSize="Subtitle" Margin="0,10,0,0" />
+                    <Label Text="5. Use the slider to adjust the time of the song" FontSize="Subtitle" Margin="0,10,0,0" />
+                </StackLayout>
+
+           <StackLayout Grid.Row="4">
+                <Label Text="How to Sell" FontSize="Title" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+                <StackLayout Margin="20">
+                 <Label Text="1. Create an Account in the Accounts Tab" FontSize="Subtitle" />
+                 <Label Text="2. Go to the sell tab and enter the required information" FontSize="Subtitle" Margin="0,10,0,0" />
+                 <Label Text="3. Hit the add to StogaShopping Button" FontSize="Subtitle" Margin="0,10,0,0" />
+                </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

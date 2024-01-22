@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.LandingPage"
+             Title="LandingPage">
+    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+             Command="{Binding RefreshCommand}">
+    <ScrollView>
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/background.png"
+                       Aspect="AspectFill"
+                       Grid.RowSpan="3"/>
+
+        <Grid Grid.Row="0">
+            <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
+                         HeightRequest="100"
+                         WidthRequest="100"
+                    HorizontalOptions="Start" />
+
+
+            <Entry Placeholder="Search" HorizontalOptions="CenterAndExpand" />
+
+
+        </Grid>
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button Text="Shopping" Clicked="ShoppingClicked" />
+            <Button Text="Music" Clicked="MusicClicked" />
+            <Button Text="Deals" Clicked="DealsClicked" />
+            <Button Text="Cart" Clicked="CartClicked" />
+            <Button Text="Sell" Clicked="SellClicked" />
+            <Button Text="Account" Clicked="AccountClicked" />
+            <Button Text="Help" Clicked="HelpClicked" />
+        </StackLayout>
+
+       
+        <StackLayout Grid.Row="2">
+         <Label Text="Welcome" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="0,60,0,10" />
+         <Label Text="Go ahead and sign in to start or just browse" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+        </StackLayout>
+    </Grid>
+   </ScrollView>
+  </RefreshView>
+</ContentPage>

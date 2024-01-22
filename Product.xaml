@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.Product"
+             Title="Product">
+
+    <StackLayout>
+         <!--Filter Entry Fields-->
+        <Entry x:Name="minPriceEntry" Placeholder="Min Price" Completed="FilterButton_Clicked" />
+        <Entry x:Name="maxPriceEntry" Placeholder="Max Price" Completed="FilterButton_Clicked" />
+        <Entry x:Name="sellerEntry" Placeholder="Seller" Completed="FilterButton_Clicked" />
+        <Entry x:Name="descriptionEntry" Placeholder="Description Keywords" Completed="FilterButton_Clicked" />
+        <Entry x:Name="featuresEntry" Placeholder="Features" Completed="FilterButton_Clicked" />
+        
+         <!--Filter Button-->
+        <Button Text="Filter" Clicked="FilterButton_Clicked" />
+        
+        <!-- Product CollectionView -->
+        <CollectionView ItemsSource="{Binding Products}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="20">
+                        <!-- Product Image -->
+                        <Image Source="{Binding Images}" HeightRequest="200" Aspect="AspectFit" />
+
+                        <!-- Product Name -->
+                        <Label Text="{Binding Name}" FontSize="24" FontAttributes="Bold" Margin="0,10,0,5" />
+
+                        <!-- Product Seller -->
+                        <Label Text="{Binding Seller}" FontSize="18" Margin="0,0,0,5" />
+
+                        <!-- Product Price -->
+                        <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="20" TextColor="Green" Margin="0,0,0,10" />
+
+                        <!-- Product Description -->
+                        <Label Text="Description" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="{Binding Description}" FontSize="16" Margin="0,0,0,10" />
+
+                         <!--Product Features--> 
+                        <Label Text="Features" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="{Binding Features}" FontSize="16" Margin="0,0,0,10" />
+                        <Button Text="Add to Cart" Clicked="AddToCartButton_Clicked" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.SellPage"
+             Title="SellPage">
+    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+             Command="{Binding RefreshCommand}">
+    <ScrollView>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+         <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/backgroundfour.png"
+                       Aspect="AspectFill"
+                       Grid.RowSpan="3"/>
+
+        <Grid Grid.Row="0">
+            <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
+                         HeightRequest="100"
+                         WidthRequest="100"
+                    HorizontalOptions="Start" />
+
+
+            <Entry Placeholder="Search" HorizontalOptions="CenterAndExpand" />
+
+
+        </Grid>
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button Text="Shopping" Clicked="ShoppingClicked" />
+            <Button Text="Music" Clicked="MusicClicked" />
+            <Button Text="Deals" Clicked="DealsClicked" />
+            <Button Text="Cart" Clicked="CartClicked" />
+            <Button Text="Sell" Clicked="SellClicked" />
+            <Button Text="Account" Clicked="AccountClicked" />
+            <Button Text="Help" Clicked="HelpClicked" />
+        </StackLayout>
+
+       
+        <StackLayout Grid.Row="2">
+        <Label Text="Add a Product" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+<Label Text="ID Information:" />
+<Entry x:Name="IDInfoEntry" Placeholder="Enter your Product ID" />
+
+<Label Text="Name:" />
+<Entry x:Name="productNameEntry" Placeholder="Enter your Product name" />
+
+<Label Text="Username:" />
+<Entry x:Name="sellerNameEntry" Placeholder="Enter the Seller/brand name" />
+
+<Label Text="Price:" />
+<Entry x:Name="priceEntry" Placeholder="Enter your Product Price" />
+
+<Label Text="Stars:" />
+<Entry x:Name="starsEntry" Placeholder="Enter your product start number" />
+
+<Label Text="Review:" />
+<Entry x:Name="reviewEntry" Placeholder="Enter a product review" />
+
+<Label Text="Availibility" />
+<Entry x:Name="availibilityEntry" Placeholder="Is your product currently availible (true/false)" />
+
+<Label Text="Details:" />
+<Entry x:Name="detailsEntry" Placeholder="Enter a description of your product" />
+
+<Label Text="Features:" />
+<Entry x:Name="featuresEntry" Placeholder="Enter key features of your product" />
+
+<Label Text="Email:" />
+<Entry x:Name="emailEntry" Placeholder="Enter your email here" />
+
+<Label Text="Phone Number:" />
+<Entry x:Name="phoneNumberEntry" Placeholder="Enter your Phone Number here" />
+
+<Label Text="Payment Information:" />
+<Entry x:Name="paymentInfoEntry" Placeholder="Enter your payment information" />
+
+
+        <Button Text="Add Product" Clicked="OnProductAddClicked" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+        </StackLayout>
+    </Grid>
+   </ScrollView>
+  </RefreshView>
+</ContentPage>

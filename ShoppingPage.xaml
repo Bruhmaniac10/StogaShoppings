@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StogaShopping.ShoppingPage"
+             Title="ShoppingPage">
+    <RefreshView IsRefreshing="{Binding IsRefreshing}"
+                 Command="{Binding RefreshCommand}">
+        <ScrollView>
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/background.png"
+                       Aspect="AspectFill"
+                       Grid.RowSpan="3"/>
+
+                <Grid Grid.Row="0">
+                    <Image Source="/Users/neeravraj/Projects/StogaShopping/StogaShopping/Resources/Images/stogashopping.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           HorizontalOptions="Start" />
+
+                    <SearchBar x:Name="searchBar" Placeholder="Search" TextChanged="OnSearchTextChanged" HorizontalOptions="CenterAndExpand" />
+                </Grid>
+
+                <StackLayout Grid.Row="1" Orientation="Horizontal">
+                    <Button Text="Shopping" Clicked="ShoppingClicked" />
+                    <Button Text="Music" Clicked="MusicClicked" />
+                    <Button Text="Deals" Clicked="DealsClicked" />
+                    <Button Text="Cart" Clicked="CartClicked" />
+                    <Button Text="Sell" Clicked="SellClicked" />
+                    <Button Text="Account" Clicked="AccountClicked" />
+                    <Button Text="Help" Clicked="HelpClicked" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Padding="10,0" HorizontalOptions="Start">
+                    <CollectionView ItemsSource="{Binding Products}" x:Name="collectionView" ItemsLayout="List">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Padding="5">
+                                    <Label Text="{Binding Name}" FontSize="Large" TextColor="Black"/>
+                                    <Label Text="{Binding Seller}" TextColor="Black"/>
+                                    <Label Text="{Binding Stars}" TextColor="Black"/>
+                                    <Label Text="{Binding Review}" TextColor="Black"/>
+                                    <Label Text="{Binding Description}" TextColor="Black"/>
+                                    <Label Text="{Binding Price}" FontSize="Large" TextColor="Black"/>
+                                    <Label Text="{Binding Availibility}" TextColor="Black"/>
+                                    <Button Text="Add to Cart" Clicked="AddToCartButtonClicked" WidthRequest="150" HeightRequest="40"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        </CollectionView>
+                </StackLayout>
+
+                <Grid Grid.Row="3">
+                
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>
